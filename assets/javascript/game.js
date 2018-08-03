@@ -63,7 +63,7 @@ userInput = userInput.toLowerCase();
 
 function generateWord() {
     word = wordList[Math.floor(Math.random() * wordList.length)];
-    alert(word);
+
 
     //turn it into an array
 
