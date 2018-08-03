@@ -1,6 +1,6 @@
 
-document.getElementById("output").innerHTML = " ";
-document.getElementById("guessed").innerHTML = " ";
+// document.getElementById("output").innerHTML = " ";
+// document.getElementById("guessed").innerHTML = " ";
 
 
 // variables
@@ -50,7 +50,6 @@ userInput = userInput.toLowerCase();
     } else {
 
     userInputArr.push(userInput);
-    document.getElementById("output").innerHTML = userInput;
     document.getElementById("guessed").innerHTML = userInputArr.join(" ");
 
     }
@@ -77,7 +76,8 @@ function initializeGame() {
         userProgress.push("_");
     }
      
-    guessesLeft =  word.length + 6;
+    //guessesLeft =  word.length + 6;
+    guessesLeft =  10;
      
     document.getElementById("remains").innerHTML = guessesLeft;
 
@@ -115,20 +115,22 @@ function evalUserInput() {
 function keepScore() {
 
     if(guessesLeft <1){
-        alert("Sorry, you lose!");
-        // or call game over
         losses++;
+        document.getElementById("progress").innerHTML = wordArr.join(" ");
+        alert("Sorry, you lose!");
         confirm("Play again?");
     }
-
-    
 
             var checkOne = wordArr.toString();
             var checkTwo = userProgress.toString();
         
         if (checkOne == checkTwo) {
-            alert("You won!");
+            
             wins++; 
+
+            
+            $(".card-text").text("You Win!! You Win!! You Win!! You may remain on earth for a while longer. Refresh the page to play again.  ");
+
         }
         
    
@@ -138,29 +140,20 @@ function keepScore() {
 
 
 
-    //see if the number of lives has dropped to 0
-    // go to end of game function
-        //(increment losses)
-
-    // if not end of game
-    // check to see if wordArr matches progressArr
-    // if so: go to you win function
-        //(increment wins)
-        //play again?
-    
-    // 
 
 
 }
 
 
 // call the functions
-function startGame() {
 
+$(document).ready(function() {
+function startGame() {    
 generateWord();
 initializeGame();
 guess();
 keepScore();
 // evalUserInput();
 };
- startGame();
+startGame();
+});

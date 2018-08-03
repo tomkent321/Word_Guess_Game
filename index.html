@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
+    <title>Space Words</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"></script>
@@ -21,11 +21,10 @@
 <body>
 
 
-<script> startGame();</script>
 </div>
 
 
-<dir class="container-fluid">
+<div class="container-fluid">
   
   
     <div class="row">
@@ -34,10 +33,9 @@
             <h3 class="card-header">Space Word Search</h3>
             <div class="card-body">
               <h4 class="card-title">Instructions</h4>
-              <p class="card-text">Try to guess each of these space related words. Each missed word takes one more second off the countdown.  Don't let the countdown go to zero!<br> Press the Start button to begin the game.</p>
-              <a href="assets/javascript/game.js startGame" class="btn btn-primary">Start the Game!</a>
-              <input class="btn btn-primary" id="clickMe" type="button" value="clickme" onclick="startGame();" />
-            </div>
+              <p class="card-text">Try to guess each of these space related words. Each missed letter takes one more second off the countdown.  Don't let the countdown go to zero!<br> You will also lose a second if you are not smart enough to press only letters. Space traverlers have to be more intelligent than that to survive! <br> Press any key to begin the game.</p><br>
+            
+            </div>a
           </div>
         </div>
     </div>
@@ -45,47 +43,69 @@
   
   
   
-  <div class="container">
+<div class="container">
 
-    <div class="row">
-      <div class = "col-lg-2">side</div>
-     
-          
-          <div class = "col-lg-8">
-            
-    
-            <!-- </div> -->
-            <!-- <p>Enter a Letter</p>
-            <p id="output"></p>
-            Guessed so far: <p id="guessed"></p> 
-            Guesses Left: <p id="remains"></p> 
-          
-            <p id="progress"></p>
-          
-          Wins: <p id="wins"></p>
-          Losses: <p id="losses"></p> -->
+<!-- *************** Row 1 ******************** -->
+    <div class="row info-row">
 
-          
-          
+        <!-- Col 1 count down -->
+          <div class = "col-lg-3 count-down">
+              <h4>Count Down</h4>
+              <br>
+              <br>
+              <p id="remains"></p>
           </div>
-        <div class = "col-lg-2">side</div>
+      
+        <!-- Col 2 letters used -->    
+          <div class = "col-lg-6 letters-used">
+              <h4>Letters Used</h4>
+              <p id="guessed"></p>
+          </div>
+          
+          <!-- Col 3 letters wins -->
+                  
+          <div class="col-lg-3 wins-losses">
+                  
+                  <div class="row win-row">
+                      <div class="col-lg-6">
+                        <h6>Wins: </h6>
+                        <p id="wins"></p>
+                      </div>   
+                  </div>
+
+                  <div class="row lose-row">
+                      <div class="col-lg-6">
+                        <h6>Losses: </h6>
+                        <p id="losses"></p>
+                      </div>   
+                  </div>
+
+
+              
+              
+              
+          </div>
+      </div>
+
+  <!-- ***************  End of Row 1 ************** -->
+
+  <!-- *************** Row 2 ******************** -->
+
+
+    <div class="row feedback-row">
+        <div class="col-lg-12 show-letters">
+
+            <p id="progress"></p>
+
+        </div>
     </div>
 
-
-    
-        
-
-
-
-
-  
-
-
-  
-
-
-
-</dir>
+    <!-- ***************  End of Row 2 ************** -->
+            
+    </div>   
+    <!-- container end -->
+</div>
+<!-- fluid container end -->
 
   <script src="assets/javascript/game.js"></script>
 </body>
